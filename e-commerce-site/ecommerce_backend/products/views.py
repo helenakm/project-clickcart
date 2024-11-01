@@ -24,8 +24,7 @@ def login_user(request):
             messages.success(request, ("You have been logged in"))
             return redirect('home')
         else:
-            messages.success(request, ("Error! Try again!"))
-            return redirect('login')
+            return render(request, 'login.html', {'error': "Invalid username or password"})
 
     else:
          return render(request, 'login.html', {}) 
