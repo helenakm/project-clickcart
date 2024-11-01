@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-
-<h1>Register a new account</h1>
-<div> 
-  <form method="POST" action="{% url 'register' %}">
-    {% csrf_token %}
-    <div class="mb-3">
-      
-  
-  </form>
-</div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Optional Bootstrap CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1>Register a new account</h1>
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.as_p }}  <!-- Render form fields -->
+            </div>
+            <button type="submit" class="btn btn-secondary">Register</button>
+        </form>
+    </div>
+</body>
 </html>
