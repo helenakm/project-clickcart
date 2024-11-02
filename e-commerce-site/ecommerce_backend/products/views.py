@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.hashers import make_password
+from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
 
@@ -54,3 +56,24 @@ def register_user(request):
             return redirect('register')    
     else:        
         return render(request, 'register.html', {'form':form})
+def reset_password(request):
+    if request.method == "POST":
+        email = request.POST.get('email')
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+        
+        if new_password != confirm_password:
+            messages.error(request, "Passwords do not match.")
+            return render(request, 'reset_password.html')
+
+        try:
+            user = User.objects.get(email=email)
+            user.password = make_password(new_password)  # Hashes the new password before saving
+            user.save()
+            messages.success(request, "Password has been reset successfully. You can now log in with your new password.")
+            return redirect('login')
+        except User.DoesNotExist:
+            messages.error(request, "No account found with that email address.")
+            return render(request, 'reset_password.html')
+
+    return render(request, 'reset_password.html')
