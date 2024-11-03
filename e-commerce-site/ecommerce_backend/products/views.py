@@ -51,10 +51,19 @@ def register_user(request):
             login(request, user)
             return redirect('home')
         else:
-            messages.success(request, ("Error registering! Try again"))
-            return redirect('register')    
+            if form.errors.get('username'):
+                messages.error(request, "Username is already in use.")
+                return redirect('register')
+
+            if form.errors.get('email'):
+                messages.error(request, "Email is already in use.")    
+                return redirect('register')
+            else:
+                messages.error(request, "Error! Try again")    
+                return redirect('register')
     else:        
         return render(request, 'register.html', {'form':form})
+
 def reset_password(request):
     if request.method == "POST":
         email = request.POST.get('email')
