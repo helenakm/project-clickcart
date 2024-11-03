@@ -8,7 +8,6 @@ from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
 
-from django import forms
 
 
 #super user: Username: admin, Password: password
