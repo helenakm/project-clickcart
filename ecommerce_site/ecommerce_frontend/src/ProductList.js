@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './ProductList.css'
 
 const ProductList = () => {
     const [products, setProducts] = useState([]);
@@ -27,7 +28,7 @@ const ProductList = () => {
                         <p>Price: ${product.price}</p>
                         {product.image && (
                             <img 
-                                src={`http://127.0.0.1:8000${product.image}`} 
+                                src={`${product.image}`} 
                                 alt={product.name} 
                                 style={{ width: '200px', height: '200px' }} 
                             />
