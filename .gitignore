@@ -1,30 +1,24 @@
 node_modules/
 
-PS C:\Users\khx27\project-clickcart\ecommerce_site\ecommerce_backend> python manage.py runserver
->> 
-Watching for file changes with StatReloader
-Performing system checks...
+# Python
+_pycache_/
+*.py[cod]
+/migrations/
+.env
+db.sqlite3
+media/
+staticfiles/
+local_settings.py
 
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "C:\Users\khx27\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1041, in _bootstrap_inner
-    self.run()
-    ~~~~~~~~^^
-  File "C:\Users\khx27\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 992, in run
-    self._target(*self._args, **self._kwargs)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\khx27\project-clickcart\.venv\Lib\site-packages\django\utils\autoreload.py", line 64, in wrapper    
-    fn(*args, **kwargs)
-    ~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\khx27\project-clickcart\.venv\Lib\site-packages\django\core\management\commands\runserver.py", line 134, in inner_run
-    self.check(display_num_errors=True)
-    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\khx27\project-clickcart\.venv\Lib\site-packages\django\core\management\base.py", line 563, in check 
-    raise SystemCheckError(msg)
-django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+# Node
+node_modules/
+build/
 
-ERRORS:
-products.CartItem.product: (fields.E300) Field defines a relation with model 'Product', which is either not installed, or is abstract.
-products.CartItem.product: (fields.E307) The field products.CartItem.product was declared with a lazy reference to 'products.product', but app 'products' doesn't provide model 'product'.
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-System check identified 2 issues (0 silenced).
+# IDEs
+.vscode/
+.idea/
