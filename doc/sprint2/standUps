@@ -1,4 +1,4 @@
-[13th November] - Sprint 1 Standup 1 Notes by Helena
+[13th November] - Sprint 2 Standup 1 Notes by Helena
 
 1. What did you work on since the last stand up?
 We had gone through the sprint 2 handout individually prior to our meeting and figured out what we are supposed to deliver at the end of the sprint.
@@ -23,6 +23,29 @@ tasks has been distributed among all team members so each individual can contrib
 
 4. Do you have any blockers?
 So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+
+[16th November] - Sprint 2 Standup 2 Notes by Helena
+
+1. What did you work on since the last stand up?
+
+team capacity: 3
+participants: Zuhaib, Helena, Nargis
+
+2. What do you commit to next?
+Nargis has started working on add categories got to some errors but will fix them by the end of the day
+I started working on add review feature and now I need to add the product id for products since reviews takes product id 
+Zuhaib is nearly done with search tool bar will update the PB.md and Sprint2.md
+Karim for now is going to complete the issues with add to cart feature 
+Ajwad is going to work on SR2, update the trello 
+
+
+3. When do you think you'll be done?
+will trying to get the features working by the evening on Sunday 17th so we have enough time for demo and if any errors were ocurring we can get the fixed. 
+Documentations shiuld be done by Saturday night 16th.
+
+4. Do you have any blockers?
+the need for product_id for both reviews and categories so we first need to resolve errors for that and then move forward to the rest of our work.
 
 
 
