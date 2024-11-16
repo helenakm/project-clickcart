@@ -15,4 +15,10 @@ urlpatterns = [
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register_user, name='register'),
     path('resetPass/', views.reset_password, name='reset password'),
+    path('reviews/<int:product_id>/', views.get_reviews, name='get_reviews'),
+    path('reviews/add/', views.add_review, name='add_review'),
+]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include('products.urls')),  # Include the `products` app URLs
 ]
