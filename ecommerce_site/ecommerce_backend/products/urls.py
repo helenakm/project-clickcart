@@ -18,7 +18,3 @@ urlpatterns = [
     path('reviews/<int:product_id>/', views.get_reviews, name='get_reviews'),
     path('reviews/add/', views.add_review, name='add_review'),
 ]
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('products.urls')),  # Include the `products` app URLs
-]
