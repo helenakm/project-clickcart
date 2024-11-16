@@ -11,6 +11,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
+from django.db.models import Q
 
 def product_list(request):
     products = Products.objects.all()
@@ -94,3 +95,17 @@ def reset_password(request):
             return render(request, 'reset_password.html')
 
     return render(request, 'reset_password.html')
+
+def search_bar(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched', '')
+        # Query the Products model for name or description containing the search term
+        searched_products = Products.objects.filter(
+            Q(name__icontains=searched) | Q(description__icontains=searched)
+        )
+        # Check if no products were found
+        if not searched_products.exists():
+            messages.warning(request, "No products found. Please try again.")
+        return render(request, "search_bar.html", {'searched': searched_products, 'query': searched})
+    else:
+        return render(request, "search_bar.html", {})
