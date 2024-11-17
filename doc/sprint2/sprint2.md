@@ -19,16 +19,18 @@ Total Capacity: 5 members
 Each team member is assigned tasks according to their expertise to balance workload.
 
 4. Spikes (Research Tasks)
-1. Search Bar Implementation
-Description: Research optimal algorithms for handling search queries efficiently in the existing system.
-Purpose: To determine whether to use basic filtering, keyword matching, or a more advanced solution like Elasticsearch or fuzzy search.
-Assigned To: Zuhaib Khan
-Expected Outcome: Choose and document the most suitable search algorithm for the system.
-2. Category System
-Description: Research best practices for implementing category filters in a dynamic product database.
-Purpose: To identify whether static category lists or dynamically generated filters (based on product tags) are more efficient.
-Assigned To: Nargis Rafie
-Expected Outcome: Document the decision and create a strategy for implementing the category filter.
+   i. Search Bar Implementation
+   Description: Research optimal algorithms for handling search queries efficiently in the existing system.
+    Purpose: To determine whether to use basic filtering, keyword matching, or a more advanced solution like Elasticsearch 
+    or fuzzy search.
+    Assigned To: Zuhaib Khan
+     Expected Outcome: Choose and document the most suitable search algorithm for the system.
+ii. Category System
+     Description: Research best practices for implementing category filters in a dynamic product database.
+     Purpose: To identify whether static category lists or dynamically generated filters (based on product tags) are more 
+      efficient.
+     Assigned To: Nargis Rafie
+     Expected Outcome: Document the decision and create a strategy for implementing the category filter.
 
 
 5. User Stories
