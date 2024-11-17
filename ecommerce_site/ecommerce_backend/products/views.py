@@ -115,38 +115,3 @@ def search_bar(request):
         return render(request, "search_bar.html", {'searched': searched_products, 'query': searched})
     else:
         return render(request, "search_bar.html", {})
-
-def get_reviews(request, product_id):
-    reviews = Review.objects.filter(product_id=product_id)
-    reviews_list = [
-        {
-            "id": review.id,
-            "user": f"{review.user.first_name} {review.user.last_name}",
-            "rating": review.rating,
-            "comment": review.comment,
-            "created_at": review.created_at,
-        }
-        for review in reviews
-    ]
-    return JsonResponse(reviews_list, safe=False)
-
-# Add a review for a product
-@login_required
-@csrf_exempt
-def add_review(request):
-    if request.method == "POST":
-        data = json.loads(request.body)
-        product_id = data.get("product_id")
-        rating = data.get("rating")
-        comment = data.get("comment")
-
-        product = get_object_or_404(Products, id=product_id)
-
-        if not rating or not comment:
-            return JsonResponse({"error": "All fields are required"}, status=400)
-
-        review = Review.objects.create(
-            user=request.user, product=product, rating=rating, comment=comment
-        )
-        review.save()
-        return JsonResponse({"message": "Review added successfully"}, status=201)
