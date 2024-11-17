@@ -1,12 +1,11 @@
 
-
 {% block content %}
-<h1>search</h1>
+<h1>Search Products</h1>
 
 <!-- Search Bar -->
 <form method="post" action="{% url 'search_bar' %}">
     {% csrf_token %}
-    <input type="text" name="searched" placeholder="Search for products..." value="{{ query|default:'' }}">
+    <input type="text" name="searched" placeholder="Search for products..." value="{{ request.POST.searched|default:'' }}">
     <button type="submit">Search</button>
 </form>
 
@@ -15,15 +14,14 @@
     <ul>
         {% for product in searched %}
             <li>
-                
                 <strong>{{ product.name }}</strong>: ${{ product.price }}
                 <p>{{ product.description }}</p>
             </li>
         {% endfor %}
     </ul>
 {% else %}
-    {% if query %}
-        <p>No products found for "{{ query }}".</p>
+    {% if request.method == "POST" %}
+        <p>No products found. Please try another search.</p>
     {% endif %}
 {% endif %}
 {% endblock %}

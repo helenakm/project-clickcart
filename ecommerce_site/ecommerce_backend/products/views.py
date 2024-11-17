@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from django.http import HttpResponse
-from .models import Products
+from .models import Products, Review
 from .serializers import ProductSerializer
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -12,15 +12,21 @@ from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
 from django.db.models import Q
+import json
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 def product_list(request):
     products = Products.objects.all()
-    product_list = "\n".join(f"{product.name}: ${product.price}" for product in products)
-    return HttpResponse(product_list, content_type="text/plain")
+    return render(request, 'product_list.html', {'products': products})
 
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Products.objects.all()
-    serializer_class = ProductSerializer
+#class ProductViewSet(viewsets.ModelViewSet):
+#    queryset = Products.objects.all()
+#    serializer_class = ProductSerializer
+
+def product_view(request, id):
+    product = get_object_or_404(Products, id=id)
+    return render(request, 'product_view.html', {'product': product})
 
 def home(request):
     return render(request, 'home.html', {})
@@ -109,3 +115,38 @@ def search_bar(request):
         return render(request, "search_bar.html", {'searched': searched_products, 'query': searched})
     else:
         return render(request, "search_bar.html", {})
+
+def get_reviews(request, product_id):
+    reviews = Review.objects.filter(product_id=product_id)
+    reviews_list = [
+        {
+            "id": review.id,
+            "user": f"{review.user.first_name} {review.user.last_name}",
+            "rating": review.rating,
+            "comment": review.comment,
+            "created_at": review.created_at,
+        }
+        for review in reviews
+    ]
+    return JsonResponse(reviews_list, safe=False)
+
+# Add a review for a product
+@login_required
+@csrf_exempt
+def add_review(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        product_id = data.get("product_id")
+        rating = data.get("rating")
+        comment = data.get("comment")
+
+        product = get_object_or_404(Products, id=product_id)
+
+        if not rating or not comment:
+            return JsonResponse({"error": "All fields are required"}, status=400)
+
+        review = Review.objects.create(
+            user=request.user, product=product, rating=rating, comment=comment
+        )
+        review.save()
+        return JsonResponse({"message": "Review added successfully"}, status=201)
