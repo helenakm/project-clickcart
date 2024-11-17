@@ -20,6 +20,7 @@
     </div>
 </div>
 
+<!-- Reviews -->
 <h2>Reviews:</h2>
 <div id="reviews">
     {% for review in product.reviews.all %}
@@ -33,7 +34,7 @@
     {% endfor %}
 </div>
 
-<!-- Review Section -->
+<!-- Add Review Section -->
 <h3>Add Your Review</h3>
 <form method="post" action="{% url 'add_review' %}">
     {% csrf_token %}

@@ -47,7 +47,7 @@ def login_user(request):
             return render(request, 'login.html', {'error': "Invalid username or password"})
 
     else:
-         return render(request, 'login.html', {}) 
+         return render(request, 'login.html', {})  
 
 def logout_user(request):
        logout(request)
@@ -55,19 +55,16 @@ def logout_user(request):
        return redirect('home') 
 
 def register_user(request):
+    
     form = SignUpForm()
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            # Create a corresponding Customer object
-            customer = Customer.objects.create(
-                user=user,
-                first_name=form.cleaned_data['first_name'],
-                last_name=form.cleaned_data['last_name'],
-                email=form.cleaned_data['email'],
-                password=user.password  # Ensure to set the password here or use hashed one
-            )
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+
+            user = authenticate(username=username, password=password)
             login(request, user)
             return redirect('home')
         else:
