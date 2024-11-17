@@ -22,7 +22,7 @@
 
 <h2>Reviews:</h2>
 <div id="reviews">
-    {% for review in product.review_set.all %}
+    {% for review in product.reviews.all %}
         <div class="review">
             <p><strong>{{ review.user.first_name }} {{ review.user.last_name }}</strong> (Rating: {{ review.rating }})</p>
             <p>{{ review.comment }}</p>

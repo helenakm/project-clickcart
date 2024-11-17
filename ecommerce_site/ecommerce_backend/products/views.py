@@ -15,6 +15,7 @@ from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
+from .models import Customer
 
 def product_list(request):
     products = Products.objects.all()
@@ -54,16 +55,19 @@ def logout_user(request):
        return redirect('home') 
 
 def register_user(request):
-    
     form = SignUpForm()
     if request.method == "POST":
         form = SignUpForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-
-            user = authenticate(username=username, password=password)
+            user = form.save()
+            # Create a corresponding Customer object
+            customer = Customer.objects.create(
+                user=user,
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name'],
+                email=form.cleaned_data['email'],
+                password=user.password  # Ensure to set the password here or use hashed one
+            )
             login(request, user)
             return redirect('home')
         else:
@@ -121,20 +125,24 @@ def get_reviews(request, product_id):
 @csrf_exempt
 def add_review(request):
     if request.method == "POST":
-        data = json.loads(request.body)
+        data = request.POST
         product_id = data.get("product_id")
         rating = data.get("rating")
         comment = data.get("comment")
 
-        product = get_object_or_404(Products, id=product_id)
-
-        if not rating or not comment:
+        if not product_id or not rating or not comment:
             return JsonResponse({"error": "All fields are required"}, status=400)
-        
+
+        customer = request.user.customer    
+        product = get_object_or_404(Products, id=product_id)
         
 
         review = Review.objects.create(
-            user=request.user, product=product, rating=rating, comment=comment
+            user=customer, product=product, rating=rating, comment=comment
         )
         review.save()
-        return JsonResponse({"message": "Review added successfully"}, status=201)
+        messages.success(request, "Review added successfully!")
+        
+
+        product = get_object_or_404(Products, id=product_id)
+        return render(request, 'product_view.html', {'product': product})
