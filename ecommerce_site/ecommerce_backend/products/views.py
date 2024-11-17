@@ -1,28 +1,32 @@
 from rest_framework import viewsets
-from django.http import HttpResponse, JsonResponse
-from .models import Products,Review
+from django.http import HttpResponse
+from .models import Products, Review
 from .serializers import ProductSerializer
-from django.shortcuts import render, redirect,  get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.hashers import make_password
-from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
+from django.db.models import Q
 import json
+from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 
 def product_list(request):
     products = Products.objects.all()
-    product_list = "\n".join(f"{product.name}: ${product.price}" for product in products)
-    return HttpResponse(product_list, content_type="text/plain")
+    return render(request, 'product_list.html', {'products': products})
 
-class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Products.objects.all()
-    serializer_class = ProductSerializer
+#class ProductViewSet(viewsets.ModelViewSet):
+#    queryset = Products.objects.all()
+#    serializer_class = ProductSerializer
+
+def product_view(request, id):
+    product = get_object_or_404(Products, id=id)
+    return render(request, 'product_view.html', {'product': product})
 
 def home(request):
     return render(request, 'home.html', {})
@@ -98,7 +102,6 @@ def reset_password(request):
 
     return render(request, 'reset_password.html')
 
-# Get reviews for a specific product
 def get_reviews(request, product_id):
     reviews = Review.objects.filter(product_id=product_id)
     reviews_list = [
@@ -127,6 +130,8 @@ def add_review(request):
 
         if not rating or not comment:
             return JsonResponse({"error": "All fields are required"}, status=400)
+        
+        
 
         review = Review.objects.create(
             user=request.user, product=product, rating=rating, comment=comment
