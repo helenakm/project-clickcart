@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h1>Our Products</h1>
+
+<style>
+  .product-list{
+    display: flex;
+    felx-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .product-item{
+    width: 300px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align:center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .product-image{
+    max-width: 200px;
+    max-height: 200px;
+    object_fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+</style>
+
+<div class="product-list">
+  {% for product in products %}
+      <div class="product-item">
+          <h3>{{ product.name }}</h3>
+          <p>Price: ${{ product.price }}</p>
+          
+          <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+          
+          {% if product.image %}
+              <img class="product-image" src="{{ product.image.url }}" alt="{{ product.name }}">
+          {% endif %}
+
+          <p>{{ product.description }}</p>
+          
+      </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

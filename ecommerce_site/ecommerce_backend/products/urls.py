@@ -3,16 +3,23 @@ from .views import product_list, ProductViewSet
 from rest_framework.routers import DefaultRouter
 from django.contrib import admin
 from . import views
+from .models import Cart
 
 router = DefaultRouter()
 router.register(r'products', ProductViewSet)
 
 urlpatterns = [
-    path('products/', product_list, name='product_list'),
+    path('products/', views.product_list, name='product_list'),
     path('api/', include(router.urls)),
     path('', views.home, name='home'),
     path('login/', views.login_user, name='login'),
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register_user, name='register'),
     path('resetPass/', views.reset_password, name='reset password'),
+    
+    path('cart/', views.cart_detail, name='cart_detail'),
+    path('cart/add/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
+    path('cart/update/<int:item_id>/', views.update_cart_item, name='update_cart_item'),
+    path('cart/remove/<int:item_id>/', views.remove_cart_item, name='remove_cart_item'),
+
 ]
