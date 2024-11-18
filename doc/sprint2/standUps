@@ -1,0 +1,66 @@
+[13th November] - Sprint 2 Standup 1 Notes by Helena
+
+1. What did you work on since the last stand up?
+   We had gone through the sprint 2 handout individually prior to our meeting and figured out what we are supposed to deliver at the end of the sprint.
+   each person had taken couple of features in mind so we could discuss about them in the meeting and choose the best out of them.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   We agreed on the features that we are going to implement and we splitted them between all the team members.
+   Nargis and Zuhaib are going to both work on ...
+   I am going to work on adding the review section
+   Karim for now is going to complete the issues with add to cart feature
+   Ajwad is going to work on SR2
+
+3. When do you think you'll be done?
+   Implementation of the features should be done by Saturday so we have enough time to demo and record it as well and also,
+   the parts such Sprint2.md, and updates for system design document should be done by end of the day of 15th so for our next stand up we have those done and we can start our implementation for the features and rest of the steps of the handout.
+   So far our main focus until our next stand up would be completing the Sprint2,Standups and system design document steps as well as satrting to implement our assigned features.
+   tasks has been distributed among all team members so each individual can contribute and get the work done earlier.
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+[16th November] - Sprint 2 Standup 2 Notes by Helena
+
+1. What did you work on since the last stand up?
+
+team capacity: 3
+participants: Zuhaib, Helena, Nargis
+
+2. What do you commit to next?
+   Nargis has started working on add categories got to some errors but will fix them by the end of the day
+   I started working on add review feature and now I need to add the product id for products since reviews takes product id
+   Zuhaib is nearly done with search tool bar will update the PB.md and Sprint2.md
+   Karim for now is going to complete the issues with add to cart feature
+   Ajwad is going to work on SR2, update the trello
+
+3. When do you think you'll be done?
+   will trying to get the features working by the evening on Sunday 17th so we have enough time for demo and if any errors were ocurring we can get the fixed.
+   Documentations shiuld be done by Saturday night 16th.
+
+4. Do you have any blockers?
+   the need for product_id for both reviews and categories so we first need to resolve errors for that and then move forward to the rest of our work.
+
+[16th November] - Sprint 2 Standup 2 Notes by Zuhaib
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+1. What did you work on since the last standup?
+
+We've been working on the documentation and updating the Trello board to reflect our progress. I focused on implementing the search bar feature, which is now almost complete. Helena has been working on the add review feature, but we're encountering an issue where we need to add a product_id to the reviews, as each review must be linked to a specific product. Nargis has started on the categories feature but has run into a few errors, which we're troubleshooting.
+
+2. What do you commit to next?
+
+Moving forward, we're focused on getting all the features wrapped up by Saturday, ensuring everything is tested and working. Once the features are finished, we'll submit pull requests for all of them for review.
+
+3. When do you think you'll be done?
+
+The core implementation should be completed by Saturday, with the goal of doing a full demo on Sunday. If any errors arise during the final integration or testing phase, we’ll work on fixing them throughout Sunday, making sure everything is polished and ready for the demo.
+
+4. Do you have any blockers?
+
+Currently, the main blocker is the need to create a product page that will display the reviews correctly. This is necessary to allow users to see the reviews linked to each product. Additionally, we need to ensure that the product_id is properly implemented in the reviews feature so that each review is tied to the correct product.
