@@ -18,4 +18,5 @@ urlpatterns = [
     path('resetPass/', views.reset_password, name='reset password'),
     path('reviews/<int:product_id>/', views.get_reviews, name='get_reviews'),
     path('reviews/add/', views.add_review, name='add_review'),
+    path('search_bar/', views.search_bar, name='search_bar'),
 ]

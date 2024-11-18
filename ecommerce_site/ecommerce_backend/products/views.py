@@ -143,3 +143,17 @@ def add_review(request):
 
         product = get_object_or_404(Products, id=product_id)
         return render(request, 'product_view.html', {'product': product})
+
+def search_bar(request):
+    if request.method == "POST":
+        searched = request.POST.get('searched', '')
+        # Query the Products model for name or description containing the search term
+        searched_products = Products.objects.filter(
+            Q(name__icontains=searched) | Q(description__icontains=searched)
+        )
+        # Check if no products were found
+        if not searched_products.exists():
+            messages.warning(request, "No products found. Please try again.")
+        return render(request, "search_bar.html", {'searched': searched_products, 'query': searched})
+    else:
+        return render(request, "search_bar.html", {})
