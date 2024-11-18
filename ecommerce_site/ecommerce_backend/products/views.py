@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from django.http import HttpResponse
-from .models import Products, Review
+from .models import Products
 from .serializers import ProductSerializer
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -11,22 +11,15 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from .forms import SignUpForm
 from django import forms
-from django.db.models import Q
-import json
-from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
 
 def product_list(request):
     products = Products.objects.all()
-    return render(request, 'product_list.html', {'products': products})
+    product_list = "\n".join(f"{product.name}: ${product.price}" for product in products)
+    return HttpResponse(product_list, content_type="text/plain")
 
-#class ProductViewSet(viewsets.ModelViewSet):
-#    queryset = Products.objects.all()
-#    serializer_class = ProductSerializer
-
-def product_view(request, id):
-    product = get_object_or_404(Products, id=id)
-    return render(request, 'product_view.html', {'product': product})
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Products.objects.all()
+    serializer_class = ProductSerializer
 
 def home(request):
     return render(request, 'home.html', {})
@@ -101,17 +94,3 @@ def reset_password(request):
             return render(request, 'reset_password.html')
 
     return render(request, 'reset_password.html')
-
-def search_bar(request):
-    if request.method == "POST":
-        searched = request.POST.get('searched', '')
-        # Query the Products model for name or description containing the search term
-        searched_products = Products.objects.filter(
-            Q(name__icontains=searched) | Q(description__icontains=searched)
-        )
-        # Check if no products were found
-        if not searched_products.exists():
-            messages.warning(request, "No products found. Please try again.")
-        return render(request, "search_bar.html", {'searched': searched_products, 'query': searched})
-    else:
-        return render(request, "search_bar.html", {})
