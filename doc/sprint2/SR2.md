@@ -33,7 +33,7 @@ Ajwad Saghir
 
 
 7. Sprint Retrospective
-At the end of the sprint, reflect on what worked and what didn’t.
+
 Practices to Continue:
 Regular standups to keep everyone aligned.
 Peer code review sessions to maintain code quality.
@@ -42,3 +42,4 @@ Pre-Deployment Checklist:
 Implement a mandatory checklist for testing and documentation before moving any feature to the "Done" column.
 Practices to Stop:
 Avoid last-minute merges close to the sprint deadline to reduce pressure and frustration.
+Category feature was incomplete due to the team member getting sick which will be continued on the next sprint.
