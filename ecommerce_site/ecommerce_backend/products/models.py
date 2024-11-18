@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Products(models.Model):
     name = models.CharField(max_length=60)
@@ -17,3 +18,13 @@ class Customer(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+class Review(models.Model):
+    user = models.ForeignKey(Customer, on_delete=models.CASCADE)  
+    product = models.ForeignKey(Products, related_name='reviews', on_delete=models.CASCADE) 
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])  
+    comment = models.TextField() 
+    created_at = models.DateTimeField(auto_now_add=True) 
+
+    def __str__(self):
+        return f'Review by {self.user} for {self.product}'
