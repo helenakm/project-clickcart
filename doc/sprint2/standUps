@@ -28,9 +28,13 @@ So far no blockers in the first standup and everyone should be able to get thing
 [16th November] - Sprint 2 Standup 2 Notes by Helena
 
 1. What did you work on since the last stand up?
-
-team capacity: 3
-participants: Zuhaib, Helena, Nargis
+Nargis started working on add category and faced some bug errors which is going to work on them
+zuhaib started working on search tool bar got most of it done still need to work on a bit 
+I started working on the backend will move on woth the frontend
+Karim has started fixing errors with add to cart features
+Ajwad working on Trello and sprint 2 documentations
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
 
 2. What do you commit to next?
 Nargis has started working on add categories got to some errors but will fix them by the end of the day
@@ -46,6 +50,32 @@ Documentations shiuld be done by Saturday night 16th.
 
 4. Do you have any blockers?
 the need for product_id for both reviews and categories so we first need to resolve errors for that and then move forward to the rest of our work.
+
+
+[17th November] - Sprint 2 Standup 3 Notes by Helena
+
+1. What did you work on since the last stand up?
+Sprint2.md and SR2 is done by Ajwad
+Trello tracking is updated and the burndown chart and schedule is missing
+review feature is done and ready to be demo
+search tool bar is done and ready for demp
+add to cart feature has been updated and done successfully ready to be demo as well
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+Nargis going to do the system desong document update and submit it
+demo is done and Zuhaib needs to edit and submit it
+schedule and burndown chart need to be done
+
+
+3. When do you think you'll be done?
+everything should be done before the due at 12
+
+4. Do you have any blockers?
+Unfortunately Nargis got sick and couldn't finish her feature but we will make it done for next sprint. 
+We could manage to have 2 new features implemented already also updating and completin the add cart feature so we should be good for meeting the requirments and we will get the category feature done by the next sprint which leaves us with no issues.
+
 
 
 
