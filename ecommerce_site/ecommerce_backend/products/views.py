@@ -19,6 +19,26 @@ from .models import Customer
 
 def product_list(request):
     products = Products.objects.all()
+
+    # Filtering
+    name_filter = request.GET.get('name')
+    price_min = request.GET.get('price_min')
+    price_max = request.GET.get('price_max')
+
+    if name_filter:
+        products = products.filter(name__icontains=name_filter)
+
+    if price_min:
+        products = products.filter(price__gte=price_min)
+
+    if price_max:
+        products = products.filter(price__lte=price_max)
+
+    # Sorting
+    sort_by = request.GET.get('sort_by')
+    if sort_by in ['name', '-name', 'price', '-price']:
+        products = products.order_by(sort_by)
+
     return render(request, 'product_list.html', {'products': products})
 
 #class ProductViewSet(viewsets.ModelViewSet):
