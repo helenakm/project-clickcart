@@ -45,3 +45,39 @@ participants: Zuhaib, Karim, Helena, Nargis
 
 4. Do you have any blockers?
    So far no blockers in the second standup and everyone should be able to get things done by our next stand up with no issue.
+
+
+[28th November] - Sprint 3 Standup 1 Notes by Zuhaib
+
+1. What did you work on since the last stand up?
+   We went over the Sprint3 handout and brainstormed which features we will be working on for sprint 3
+   
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+   
+2. What do you commit to next?
+   We outlined the features to be implemented and split the work between team members. Nargis will be working on the category feature, I have taken up the filter search/ sort-by feature, Helena, Karim and Ajwad will be working on the documentation stuff and Karim will additionally merge the add to cart feature with the main branch.
+     
+3. When do you think you will be done?
+   We expect to complete the implementation of the features by Saturday, so that we have enough time to go over the implementation with each other and do the demo. Additionally, Sprint3.md and system design document should be finished by the 30th of November. We will start working on our assigned tasks today and hope to complete it by the deadlines weve set.
+   
+4. Do you have any blockers?
+   Currently, there are no blockers. During our first stand-up, everyone indicated that they should be able to complete their tasks without any issues by the time of our next stand-up.
+
+[30th November] - Sprint 3 Standup 2 Notes by Zuhaib
+
+1. What did you work on since the last stand up?
+   Since the last stand-up, I have completed the filter search feature. Nargis completed the system design document and pushed it to the doc branch. Helena and Ajwad are currently working on Trello and the finalizing the rest of the documentation. Karim was having trouble with merging the cart feature with the main branch be resolved it together during the meeting.
+   
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+   
+2. What do you commit to next?
+   We will complete the implementation of the features by tomorrow evening and meetup for the demo. Additionally, we should be done with the documentation stuff tonight. Iwill submit a pull request tonight after making a few final adjustments for the filter search feature. Nargis will be completing the category feature.
+     
+3. When do you think you will be done?
+   We expect to complete the implementation to be done by tomorrow evening and prepare for the demo to be recorded later in the evening. The documentation should be done by tonight.
+   
+4. Do you have any blockers?
+   We had problems with creating a new branch for the add to cart feature that we resolved during the meeting. Everyone should be able to get things done by our next standup.
+   
