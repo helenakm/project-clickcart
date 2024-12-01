@@ -3,6 +3,43 @@
 {% block title %}Product List{% endblock %}
 
 {% block content %}
+<form method="get" class="mb-4">
+    <div class="row">
+
+        <div class="col-md-4">
+            <label for="name_filter" class="form-label">Search by Name:</label>
+            <input type="text" name="name" id="name_filter" class="form-control" value="{{ request.GET.name }}">
+        </div>
+
+        <div class="col-md-2">
+            <label for="price_min" class="form-label">Min Price:</label>
+            <input type="number" name="price_min" id="price_min" class="form-control" value="{{ request.GET.price_min }}">
+        </div>
+        <div class="col-md-2">
+            <label for="price_max" class="form-label">Max Price:</label>
+            <input type="number" name="price_max" id="price_max" class="form-control" value="{{ request.GET.price_max }}">
+        </div>
+
+
+        <div class="col-md-4">
+            <label for="sort_by" class="form-label">Sort By:</label>
+            <select name="sort_by" id="sort_by" class="form-control">
+                <option value="">Select</option>
+                <option value="name" {% if request.GET.sort_by == 'name' %}selected{% endif %}>Name (A-Z)</option>
+                <option value="-name" {% if request.GET.sort_by == '-name' %}selected{% endif %}>Name (Z-A)</option>
+                <option value="price" {% if request.GET.sort_by == 'price' %}selected{% endif %}>Price (Low to High)</option>
+                <option value="-price" {% if request.GET.sort_by == '-price' %}selected{% endif %}>Price (High to Low)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Apply Filters</button>
+        <a href="{% url 'product_list' %}" class="btn btn-secondary">Reset</a>
+    </div>
+</form>
+
+
 <h1>Product List</h1>
 <div class="container">
     <div class="row">
