@@ -3,33 +3,64 @@
 {% block title %}Click Cart - Home{% endblock %}
 
 {% block content %}
-
-        <!-- Product Categories -->
-        <div class="categories">
+    <!-- Product Categories -->
+    <div class="categories">
+        {% for category in categories %}
             <div class="category-item">
-                <img src="diagnostic.jpg" alt="Diagnostic">
-                <p>Diagnostic</p>
+                <a href="{% url 'category_detail' category.id %}">
+                    {% if category.image %}
+                        <img class="category-image" src="{{ category.image.url }}" alt="{{ category.name }}">
+                    {% else %}
+                        <div class="no-image">No image available</div>
+                    {% endif %}
+                    <p class="category-name">{{ category.name }}</p>
+                </a>
             </div>
-            <div class="category-item">
-                <img src="wound_care.jpg" alt="Wound Care">
-                <p>Wound Care</p>
-            </div>
-            <div class="category-item">
-                <img src="surgical.jpg" alt="Surgical">
-                <p>Surgical</p>
-            </div>
-            <div class="category-item">
-                <img src="ppe.jpg" alt="PPE">
-                <p>PPE</p>
-            </div>
-            <div class="category-item">
-                <img src="sterilization.jpg" alt="Sterilization">
-                <p>Sterilization</p>
-            </div>
-            <div class="category-item">
-                <img src="respiratory_care.jpg" alt="Respiratory Care">
-                <p>Respiratory Care</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+
+    <style>
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .category-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .no-image {
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #888;
+        }
+
+        .category-name {
+            margin: 15px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-transform: uppercase;
+        }
+    </style>
 {% endblock %}
