@@ -1,22 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Click Cart - Home{% endblock %}
+{% block title %}{{ category.name }} - Products{% endblock %}
 
 {% block content %}
     <style>
-        .category-heading {
-            padding: 20px !important;
-        }
-        .categories {
+        .products {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin: 20px 0;
             padding: 20px !important;
             list-style-type: none;
         }
 
-        .category-item {
+        .product-item {
             border: 1px solid #ddd;
             border-radius: 8px;
             background-color: #f9f9f9;
@@ -28,14 +25,14 @@
             overflow: hidden;
         }
 
-        .category-item:hover {
+        .product-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        .category-image {
+        .product-image {
             width: 100%;
-            height: 350px;
+            height: 400px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -43,49 +40,55 @@
             border-bottom: 1px solid #ddd;
         }
 
-        .category-image img {
+        .product-image img {
             max-width: 100%;
             height: auto;
         }
 
-        .category-details {
+        .product-details {
             width: 100%;
             text-align: center;
             padding: 15px;
         }
 
-        .category-details p {
+        .product-details p {
             margin: 5px 0;
             font-size: 1rem;
         }
 
-        .category-name {
+        .product-details p.price {
             font-weight: bold;
-            font-size: 1.2rem;
-            color: #333;
+            color: #28a745;
         }
 
-        .no-image {
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #888;
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        a, a:hover {
+            text-decoration: none;
+            color: black;
         }
     </style>
 
-    <h1 class="category-heading">Product Categories</h1>
-    <div class="categories">
-        {% for category in categories %}
-            <div class="category-item">
-                <a href="{% url 'category_detail' category.id %}">
-                    <div class="category-image">
-                        {% if category.image %}
-                            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+    <h1>{{ category.name }}</h1>
+    <div class="products">
+        {% for product in products %}
+            <div class="product-item">
+                <a href="{% url 'product_view' product.id %}">
+                    <div class="product-image">
+                        {% if product.image %}
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
                         {% else %}
-                            <div class="no-image">No image available</div>
+                            <p>No image available</p>
                         {% endif %}
                     </div>
-                    <div class="category-details">
-                        <p class="category-name">{{ category.name }}</p>
+                    <div class="product-details">
+                        <p>{{ product.name }}</p>
+                        <p class="price">${{ product.price }}</p>
+                        <p>{{ product.description }}</p>
                     </div>
                 </a>
             </div>

@@ -15,12 +15,36 @@ from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
+<<<<<<< HEAD
 from .models import Customer
 from .models import CartItem
 from .utils import get_or_create_cart
+=======
+from .models import *
+>>>>>>> 8ddff5f4ec70939875a78f0054130d21ee359295
 
 def product_list(request):
     products = Products.objects.all()
+
+    # Filtering
+    name_filter = request.GET.get('name')
+    price_min = request.GET.get('price_min')
+    price_max = request.GET.get('price_max')
+
+    if name_filter:
+        products = products.filter(name__icontains=name_filter)
+
+    if price_min:
+        products = products.filter(price__gte=price_min)
+
+    if price_max:
+        products = products.filter(price__lte=price_max)
+
+    # Sorting
+    sort_by = request.GET.get('sort_by')
+    if sort_by in ['name', '-name', 'price', '-price']:
+        products = products.order_by(sort_by)
+
     return render(request, 'product_list.html', {'products': products})
 
 class ProductViewSet(viewsets.ModelViewSet):
@@ -32,8 +56,13 @@ def product_view(request, id):
     return render(request, 'product_view.html', {'product': product})
 
 def home(request):
-    return render(request, 'home.html', {})
+    categories = Category.objects.all()  # Get all categories from the database
+    return render(request, 'home.html', {'categories': categories})
 
+def category_detail(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    products = category.products.all()
+    return render(request, 'category_detail.html', {'category': category, 'products': products})
 
 def login_user(request):
 
