@@ -179,5 +179,73 @@ participants: Zuhaib, Karim, Helena, Nargis, Ajwad
 4. Do you have any blockers?
    We had problems with creating a new branch for the add to cart feature that we resolved during the meeting. 
    Everyone should be able to get things done by our next standup.
+
+
+[28th November] - Sprint 3 Standup 1 Notes by Ajwad 
+
+1. What did you work on since the last stand up?
+We wrapped up sprint 2 and I went over the sprint 3 notes.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   We agreed on the features that we are going to implement and we splitted them between all the team members.
+   Zuhaib is going to work on search filter feature
+   Nargis is going to work on the category feature.
+   Helena,Karim,I are going to work on documentations and trello trackings
+
+  
+
+3. When do you think you will be done?
+  I will be done by the schedule and burndown by the 30 Nov and then rest of the documentation will be completed on the 1st.
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+   
+[30th November] - Sprint 3 Standup 2 Notes by Ajwad
+
+1. What did you work on since the last stand up?
+  Nargis started on Software Design Architecture. 
+  Karim and Zuhaib tried solving the issue with creating branch and pushing the changes of the add-to-cart feature.
+  Helena created the documentation branch for sprint 3 and the pull request for it
+I created the schedule and Sprint 3. Working on the rest of the document 
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   Nargis is going to finish the category feature and make it work as expected
+   I will commit to sr3 and the rest of the documents.
+
+3. When do you think you will be done?
+   Implementation of the features should be done by Sunday evening so we have enough time to demo and record it as well and also,
+  I will be done by december 1st  6 pm.
+
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+
+[1st December] - Sprint 3 Standup 3 Notes by Ajwad
+
+1. What did you work on since the last stand up?
+  Implementations are done by Zuhaib and Helena
+  Trello tracking is done mostly just some minor changes needed
+ I completed sprint 3 and rest of the documentations
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   I need to complete sr3 by tonight 
+  
+
+3. When do you think you will be done?
+   We should be done by midnight on December 1st and submit Sprint3.
+
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
    
 
