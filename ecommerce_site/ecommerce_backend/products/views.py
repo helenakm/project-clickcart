@@ -18,6 +18,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Customer
 from .models import CartItem
 from .utils import get_or_create_cart
+from django.db import transaction
 from .models import *
 
 def product_list(request):
@@ -93,6 +94,9 @@ def register_user(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
+            with transaction.atomic():
+                user = form.save()
+                Customer.objects.create(user=user)
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
 
