@@ -23,6 +23,31 @@ participants: Zuhaib, Karim, Helena, Nargis, Ajwad
 4. Do you have any blockers?
    So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
 
+[28th November] - Sprint 3 Standup 1 Notes by Nargis
+
+1. What did you work on since the last stand up?
+   We had gone through the sprint 2 handout individually prior to our meeting and figured out what we are supposed to deliver at the end of the sprint.
+   each person had taken couple of features in mind so we could discuss about them in the meeting and choose the best feature for this sprint.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   We agreed on the features that we are going to implement and we splitted them between all the team members.
+   Helena, Karim, Ajwad are going to work on documentations and trello tracking.
+   I am going to continue on the category feature as was not done in previouse sprint due to my sickness.
+   Zuhaib is going to work on search filter feature for the website.
+   
+
+3. When do you think you will be done?
+   Implementation of the features should be done by Saturday evening so we have enough time to demo and record it as well.
+   Sprint3.md and updates of system design document should be done by end of the day of 30th.
+   we are going to start working on each task as of today as we all have different assignments and projects too
+   tasks has been distributed among all team members so each individual can contribute and get the work done earlier.
+
+4. Do you have any blockers?
+   We do not blockers in the first standup and everyone should be able to get things done by our next stand up without any issues.
+
 
 [30th November] - Sprint 3 Standup 2 Notes by Nargis
 
@@ -45,6 +70,26 @@ participants: Zuhaib, Karim, Helena, Nargis
 
 4. Do you have any blockers?
    So far no blockers in the second standup and everyone should be able to get things done by our next stand up with no issue.
+
+[1st December] - Sprint 3 Standup 3 Notes by Nargis
+
+1. What did you work on since the last stand up?
+   I updated the layout and design of the project and added the categories features for the products on our ecommerce site. 
+   Zuhaib added the filter and search feature to our website. 
+   Helena completed the trello update and added the new branches.
+   Ajwad worked on burndown chart, SR3, and product backlog.
+   
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+   
+2. What do you commit to next?
+   We will complate the demo recording. Submit our standups to discord. 
+      
+3. When do you think you will be done?
+   We should be done by midnight on December 1st and submit Sprint3.
+   
+4. Do you have any blockers?
+   No, it is the last sprint of our final project. So, we are good so far. 
 
 
 [28th November] - Sprint 3 Standup 1 Notes by Zuhaib
@@ -92,3 +137,4 @@ participants: Zuhaib, Karim, Helena, Nargis, Ajwad
    We had problems with creating a new branch for the add to cart feature that we resolved during the meeting. 
    Everyone should be able to get things done by our next standup.
    
+
