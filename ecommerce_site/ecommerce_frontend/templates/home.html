@@ -3,33 +3,92 @@
 {% block title %}Click Cart - Home{% endblock %}
 
 {% block content %}
+    <style>
+        .category-heading {
+            padding: 20px !important;
+        }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px !important;
+            list-style-type: none;
+        }
 
-        <!-- Product Categories -->
-        <div class="categories">
+        .category-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .category-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .category-details {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .category-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .category-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .no-image {
+            padding: 20px;
+            background-color: #f4f4f4;
+            color: #888;
+        }
+    </style>
+
+    <h1 class="category-heading">Product Categories</h1>
+    <div class="categories">
+        {% for category in categories %}
             <div class="category-item">
-                <img src="diagnostic.jpg" alt="Diagnostic">
-                <p>Diagnostic</p>
+                <a href="{% url 'category_detail' category.id %}">
+                    <div class="category-image">
+                        {% if category.image %}
+                            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                        {% else %}
+                            <div class="no-image">No image available</div>
+                        {% endif %}
+                    </div>
+                    <div class="category-details">
+                        <p class="category-name">{{ category.name }}</p>
+                    </div>
+                </a>
             </div>
-            <div class="category-item">
-                <img src="wound_care.jpg" alt="Wound Care">
-                <p>Wound Care</p>
-            </div>
-            <div class="category-item">
-                <img src="surgical.jpg" alt="Surgical">
-                <p>Surgical</p>
-            </div>
-            <div class="category-item">
-                <img src="ppe.jpg" alt="PPE">
-                <p>PPE</p>
-            </div>
-            <div class="category-item">
-                <img src="sterilization.jpg" alt="Sterilization">
-                <p>Sterilization</p>
-            </div>
-            <div class="category-item">
-                <img src="respiratory_care.jpg" alt="Respiratory Care">
-                <p>Respiratory Care</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}

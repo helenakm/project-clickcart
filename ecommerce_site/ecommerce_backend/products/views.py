@@ -15,7 +15,7 @@ from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from .models import Customer
+from .models import *
 
 def product_list(request):
     products = Products.objects.all()
@@ -30,8 +30,13 @@ def product_view(request, id):
     return render(request, 'product_view.html', {'product': product})
 
 def home(request):
-    return render(request, 'home.html', {})
+    categories = Category.objects.all()  # Get all categories from the database
+    return render(request, 'home.html', {'categories': categories})
 
+def category_detail(request, category_id):
+    category = get_object_or_404(Category, id=category_id)
+    products = category.products.all()
+    return render(request, 'category_detail.html', {'category': category, 'products': products})
 
 def login_user(request):
 
