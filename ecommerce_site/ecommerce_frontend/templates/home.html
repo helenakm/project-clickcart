@@ -3,38 +3,29 @@
 {% block title %}Click Cart - Home{% endblock %}
 
 {% block content %}
-    <!-- Product Categories -->
-    <div class="categories">
-        {% for category in categories %}
-            <div class="category-item">
-                <a href="{% url 'category_detail' category.id %}">
-                    {% if category.image %}
-                        <img class="category-image" src="{{ category.image.url }}" alt="{{ category.name }}">
-                    {% else %}
-                        <div class="no-image">No image available</div>
-                    {% endif %}
-                    <p class="category-name">{{ category.name }}</p>
-                </a>
-            </div>
-        {% endfor %}
-    </div>
-
     <style>
+        .category-heading {
+            padding: 20px !important;
+        }
         .categories {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
+            margin: 20px 0;
+            padding: 20px !important;
+            list-style-type: none;
         }
 
         .category-item {
-            background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 8px;
-            overflow: hidden;
-            text-align: center;
+            background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
         }
 
         .category-item:hover {
@@ -44,9 +35,34 @@
 
         .category-image {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            height: 350px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-bottom: 1px solid #ddd;
+        }
+
+        .category-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .category-details {
+            width: 100%;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .category-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .category-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
         }
 
         .no-image {
@@ -54,13 +70,25 @@
             background-color: #f4f4f4;
             color: #888;
         }
-
-        .category-name {
-            margin: 15px 0;
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            text-transform: uppercase;
-        }
     </style>
+
+    <h1 class="category-heading">Product Categories</h1>
+    <div class="categories">
+        {% for category in categories %}
+            <div class="category-item">
+                <a href="{% url 'category_detail' category.id %}">
+                    <div class="category-image">
+                        {% if category.image %}
+                            <img src="{{ category.image.url }}" alt="{{ category.name }}">
+                        {% else %}
+                            <div class="no-image">No image available</div>
+                        {% endif %}
+                    </div>
+                    <div class="category-details">
+                        <p class="category-name">{{ category.name }}</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
