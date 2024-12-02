@@ -14,14 +14,11 @@ from django import forms
 from django.db.models import Q
 import json
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.auth.decorators import login_required
-<<<<<<< HEAD
 from .models import Customer
 from .models import CartItem
 from .utils import get_or_create_cart
-=======
 from .models import *
->>>>>>> 8ddff5f4ec70939875a78f0054130d21ee359295
+
 
 def product_list(request):
     products = Products.objects.all()

@@ -20,14 +20,11 @@ urlpatterns = [
     path('reviews/<int:product_id>/', views.get_reviews, name='get_reviews'),
     path('reviews/add/', views.add_review, name='add_review'),
     path('search_bar/', views.search_bar, name='search_bar'),
-<<<<<<< HEAD
     path('cart/', views.cart_detail, name='cart_detail'),
     path('cart/add/<int:product_id>/', views.add_to_cart, name='add_to_cart'),
     path('cart/update/<int:item_id>/', views.update_cart_item, name='update_cart_item'),
     path('cart/remove/<int:item_id>/', views.remove_cart_item, name='remove_cart_item'),
+    path('category/<int:category_id>/', views.category_detail, name='category_detail'),
 
 ]
-=======
-    path('category/<int:category_id>/', views.category_detail, name='category_detail'),
-]
->>>>>>> 8ddff5f4ec70939875a78f0054130d21ee359295
+
