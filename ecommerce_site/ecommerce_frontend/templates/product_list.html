@@ -92,8 +92,24 @@
 <form method="get" class="mb-4" style="margin-left: 10px;">
     <div class="row">
         <div class="col-md-4">
+<<<<<<< HEAD
+            <div class="card mb-4 shadow-sm">
+                {% if product.image %}
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}" style="max-height: 200px; object-fit: cover;">
+                {% else %}
+                <h1>No image available</h1>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">${{ product.price }}</p>
+                    <a href="{% url 'product_view' product.id %}" class="btn btn-primary">View Details</a> 
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
+                </div>
+            </div>
+=======
             <label for="name_filter" class="form-label">Search by Name:</label>
             <input type="text" name="name" id="name_filter" class="form-control" value="{{ request.GET.name }}" placeholder="Enter product name">
+>>>>>>> 8ddff5f4ec70939875a78f0054130d21ee359295
         </div>
 
         <div class="col-md-2">
