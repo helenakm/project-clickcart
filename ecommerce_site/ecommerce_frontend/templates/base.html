@@ -156,12 +156,15 @@
         .alert {
             margin-top: 10px;
         }
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <!-- Sidebar -->
     <div class="sidebar">
-        <h1>Click Cart</h1>
+        <a href="{% url 'home' %}"><h1>Click Cart</h1></a>
         <ul>
             <li><a href="{% url 'home' %}">HOME</a></li>
             <li><a href="{% url 'product_list' %}">PRODUCTS</a></li>
