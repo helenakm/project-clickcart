@@ -138,6 +138,7 @@
                         {% endif %}
                     </div>
                     <div class="product-details">
+                        <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
                         <p class="product-name">{{ product.name }}</p>
                         <p class="price">${{ product.price }}</p>
                         <p>{{ product.description }}</p>

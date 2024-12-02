@@ -65,6 +65,7 @@
     </style>
 
     <h1>{{ product.name }}</h1>
+    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
     <div class="container">
         <div class="product-left">
             <div class="product-image-container">
