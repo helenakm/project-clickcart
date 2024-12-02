@@ -1,3 +1,66 @@
+[28th November] - Sprint 3 Standup 1 Notes by Karim
+
+1. What did you work on since the last stand up?
+We went through the Sprint 3 handout and the grading rubric to see what was required for each member to complete and to what extent. 
+We were very eager to review if we fixed our Sprint 1 mistakes on our Sprint 2 but we did not get any marks or feedback by this time so we are sticking to the last format we used.
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+Zuihab started to work on the search feature for the website.
+Nargis kept on working on the category feature for the website.
+Ajwad, Helena and me got assigned to work on the documentations and Trello.
+I also got assigned to merging the add-to-cart feature into the main code.
+
+
+3. When do you think you'll be done?
+All of the features implementations should be done by the Saturday so that we have enough time for recording the demo and merging the codes completely before the due date.
+
+4. Do you have any blockers?
+None big blockers other than some personal time management issues with other coursework.
+
+[30th November] - Sprint 3 Standup 2 Notes by Karim
+
+1. What did you work on since the last stand up?
+I finished merging the add-to-cart feature into the copy of the main branch. The feature now has better and more smooth interface, with images, that it used to had before. I also helped Nargis with the diagrams.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+Since all of the merging was done on a copy of main branch, we still need to merge all of the features into the original main branch.
+I also going to work on the Trello.
+
+3. When do you think you'll be done?
+Team needs to finish all of the feature integrations into main so that we are able to do the demo in time by tomorrow.
+Documentation also needs to be finished.
+
+
+4. Do you have any blockers?
+We came across a big blocker since the main branch code was updated significantly both on the back and frontend. This way, the feature was not possible to merge it straightfoward and it had lots of conflicts needed to be solved. 
+
+
+
+[1st December] - Sprint 3 Standup 3 Notes by Karim
+
+1. What did you work on since the last stand up?
+Zuhaib and Nargis succesfully added the filter and search feature and the category feature to our website. 
+Ajwad worked on burndown chart, SR3, and product backlog.
+Helena completed the Trello update and added the new branches.
+I updated the Trello and fortunately, with the help of Zuihab, we were able to finally merge the add cart feature into the main code.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+After we finish merging all branches, we will do the demo recording and submit all standup notes together with the documentations. 
+
+3. When do you think you'll be done?
+We should be finishing before the midnight deadline.
+
+4. Do you have any blockers?
+No blockers at all.
+
 [28th November] - Sprint 3 Standup 1 Notes by Helena
 
 1. What did you work on since the last stand up?
