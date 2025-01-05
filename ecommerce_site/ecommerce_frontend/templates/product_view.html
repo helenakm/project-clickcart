@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.name }} - Product Details{% endblock %}
+
+{% block content %}
+    <style>
+        .product-image {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-left {
+            width: 48%; /* Left column for image and description */
+        }
+
+        .product-right {
+            width: 48%; /* Right column for reviews and form */
+        }
+
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1, h3 {
+            color: #333;
+            padding: 20px !important;
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+        }
+
+        /* Styling for the review form and title */
+        h2, h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            min-height: 100px;
+        }
+
+        .review-form input[type="number"] {
+            width: 60px;
+        }
+
+        .no-image {
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+
+    <h1>{{ product.name }}</h1>
+    <div class="container">
+        <div class="product-left">
+            <div class="product-image-container">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image">
+                {% else %}
+                    <div class="no-image">No image available</div>
+                {% endif %}
+            </div>
+            <div class="product-description">
+                <h3>${{ product.price }}</h3>
+                <p>{{ product.description|default:"No description available" }}</p>
+                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary" style="background-color: #006699; color: white;">Add to Cart</a>
+                <br>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div class="product-right">
+            <!-- Reviews -->
+            <h2>Reviews:</h2>
+            <div id="reviews">
+                {% for review in product.reviews.all %}
+                    <div class="review">
+                        <p><strong>{{ review.user.first_name }} {{ review.user.last_name }}</strong> (Rating: {{ review.rating }})</p>
+                        <p>{{ review.comment }}</p>
+                        <p><small>Reviewed on: {{ review.created_at }}</small></p>
+                    </div>
+                {% empty %}
+                    <p>No reviews yet for this product.</p>
+                {% endfor %}
+            </div>
+
+            <!-- Add Review Section -->
+            <h3>Add Your Review</h3>
+            <form method="post" action="{% url 'add_review' %}" class="review-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.id }}">
+                <label for="rating">Rating (1-5):</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+                <br><br>
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" required></textarea>
+                <br><br>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

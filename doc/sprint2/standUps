@@ -1,0 +1,301 @@
+[13th November] - Sprint 2 Standup 1 Notes by Helena
+
+1. What did you work on since the last stand up?
+   We had gone through the sprint 2 handout individually prior to our meeting and figured out what we are supposed to deliver at the end of the sprint.
+   each person had taken couple of features in mind so we could discuss about them in the meeting and choose the best out of them.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   We agreed on the features that we are going to implement and we splitted them between all the team members.
+   Nargis and Zuhaib are going to both work on search bar and categories respectively
+   I am going to work on adding the review section
+   Karim for now is going to complete the issues with add to cart feature
+   Ajwad is going to work on SR2
+
+3. When do you think you'll be done?
+   Implementation of the features should be done by Saturday so we have enough time to demo and record it as well and also,
+   the parts such Sprint2.md, and updates for system design document should be done by end of the day of 15th so for our next stand up we have those done and we can start our implementation for the features and rest of the steps of the handout.
+   So far our main focus until our next stand up would be completing the Sprint2,Standups and system design document steps as well as satrting to implement our assigned features.
+   tasks has been distributed among all team members so each individual can contribute and get the work done earlier.
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+[16th November] - Sprint 2 Standup 2 Notes by Helena
+
+1. What did you work on since the last stand up?
+   Nargis started working on add category and faced some bug errors which is going to work on them
+   zuhaib started working on search tool bar got most of it done still need to work on a bit
+   I started working on the backend will move on woth the frontend
+   Karim has started fixing errors with add to cart features
+   Ajwad working on Trello and sprint 2 documentations
+   team capacity: 5
+   participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   Nargis has started working on add categories got to some errors but will fix them by the end of the day
+   I started working on add review feature and now I need to add the product id for products since reviews takes product id
+   Zuhaib is nearly done with search tool bar will update the PB.md and Sprint2.md
+   Karim for now is going to complete the issues with add to cart feature
+   Ajwad is going to work on SR2, update the trello
+
+3. When do you think you'll be done?
+   will trying to get the features working by the evening on Sunday 17th so we have enough time for demo and if any errors were ocurring we can get the fixed.
+   Documentations shiuld be done by Saturday night 16th.
+
+4. Do you have any blockers?
+   the need for product_id for both reviews and categories so we first need to resolve errors for that and then move forward to the rest of our work.
+
+[17th November] - Sprint 2 Standup 3 Notes by Helena
+
+1. What did you work on since the last stand up?
+   Sprint2.md and SR2 is done by Ajwad
+   Trello tracking is updated and the burndown chart and schedule is missing
+   review feature is done and ready to be demo
+   search tool bar is done and ready for demp
+   add to cart feature has been updated and done successfully ready to be demo as well
+   team capacity: 5
+   participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   Nargis going to do the system desong document update and submit it
+   demo is done and Zuhaib needs to edit and submit it
+   schedule and burndown chart need to be done
+
+3. When do you think you'll be done?
+   everything should be done before the due at 12
+
+4. Do you have any blockers?
+   Unfortunately Nargis got sick and couldn't finish her feature but we will make it done for next sprint.
+   We could manage to have 2 new features implemented already also updating and completin the add cart feature so we should be good for meeting the requirments and we will get the category feature done by the next sprint which leaves us with no issues.
+
+[13th November] - Sprint 2 Standup 1 Notes by Zuhaib
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+1. What did you work on since the last standup?
+   Since the last standup, we focused primarily on fixing conflicts between different branches. There were some overlapping changes that caused merge conflicts, and we spent time resolving those to ensure that the code on both branches could be integrated smoothly without any errors.
+
+2. What do you commit to next?
+   Going forward, we've agreed as a team on the next set of features we will be focusing on. The tasks have been clearly split among the team members, I have been assigned the search bar feature, Helena will be working on the add review feature, Nargis on categories, Ajwad is going to work on SR2 and trello and Karim is going to fix the add to cart feature.
+
+3. When do you think you'll be done?
+   We expect the implementation of the features to be completed by Saturday. This includes writing the necessary code, testing it, and resolving any minor issues that might arise during the process. After that, we'll begin preparing for the demo, which will be ready by Sunday.
+   We will try to get the docs done by the next standup.
+
+4. Do you have any blockers?
+   As of now, we don’t have any blockers. Everything is progressing smoothly. The conflicts have been resolved.
+
+[16th November] - Sprint 2 Standup 2 Notes by Zuhaib
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+1. What did you work on since the last standup?
+
+We've been working on the documentation and updating the Trello board to reflect our progress. I focused on implementing the search bar feature, which is now almost complete. Helena has been working on the add review feature, but we're encountering an issue where we need to add a product_id to the reviews, as each review must be linked to a specific product. Nargis has started on the categories feature but has run into a few errors, which we're troubleshooting.
+
+2. What do you commit to next?
+
+Moving forward, we're focused on getting all the features wrapped up by Saturday, ensuring everything is tested and working. Once the features are finished, we'll submit pull requests for all of them for review.
+
+3. When do you think you'll be done?
+
+The core implementation should be completed by Saturday, with the goal of doing a full demo on Sunday. If any errors arise during the final integration or testing phase, we’ll work on fixing them throughout Sunday, making sure everything is polished and ready for the demo.
+
+4. Do you have any blockers?
+
+Currently, the main blocker is the need to create a product page that will display the reviews correctly. This is necessary to allow users to see the reviews linked to each product. Additionally, we need to ensure that the product_id is properly implemented in the reviews feature so that each review is tied to the correct product.
+
+[17th November] - Sprint 2 Standup 3 Notes by Zuhaib
+
+1. What did you work on since the last stand up?
+   Ajwad finished Sprint2.md and SR2. Trello tracking is updated, but the burndown chart and schedule are still missing. The review feature is done and ready to show, and the search toolbar is also ready. The add-to-cart feature was updated successfully and is ready for a demo too.
+
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   Nargis will update and submit the system design document. The demo is completed, I just need to trim and push it onto the docs. The schedule and burndown chart is being worked on by ajwad.
+
+3. When do you think you'll be done?
+   We are mostly completed with sprint 2 we should be done by the 12 pm deadline
+
+4. Do you have any blockers?
+   We couldn't complete the category feature but 2 features have been implemented that is search bar and the review feature. The category feature is being worked on and we should be able to implement it in sprint3
+
+[13th November] - Sprint 2 Standup 1 Notes by Karim
+
+1. What did you work on since the last stand up?
+   We went through the Sprint 1 feedback to review what were our mistakes and came up with some solutions to those problems so that we would not commit the same mistakes in Sprint 2. We also took extra care to look carefully into the Sprint 2 grading rubric to know what things we should be more aware of.
+   team capacity: 5
+   participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   We agreed on fixing the issues that came up within Sprint 1 so that we do not encounter them again on Sprint 2.
+   Ajwad got assigned SR2.
+   Helena chose to develop the review feature.
+   Zuihab and Nargis chose to develop the search and add category feature.
+   I committed to integrate the add-remove feature to one copy of main branch just to be safe so that it would work smoothlly.
+
+3. When do you think you'll be done?
+   Features themselves are planned to be finished by Saturday. Next stand-up is planned for the morning of the same day so that we can discuss in group if there are any blockers for the new features being developed.
+
+4. Do you have any blockers?
+   There are not any big blockers so far apart from minor obstacles.
+
+[16th November] - Sprint 2 Standup 2 Notes by Karim
+
+1. What did you work on since the last stand up?
+   I am a little bit worried about merging my add-remove cart feature to the main branch so I will work on a copy of main branch so it will be safer. That will also bring some challenges since the first version of the feature was developed with an independent home window, so everything needs to be adapted to the main branch.
+
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   Ajwad, apart from doing the SR2, he is also going to update the trello.
+   Zuhaib is close to finishing the search feature.
+   Nargis started working on the add categories feature.
+   Helena also started working on the add review feature.
+   I am still working on merging the add-remove cart to the main copy branch, I am also thinking of some upgrades for the add-remove cart feature.
+
+3. When do you think you'll be done?
+   I should be finishing work either on today's midnight or tomorrow's afternoon just in time for the demo.
+
+4. Do you have any blockers?
+   Some minor time management issues since this week was quite heavy on coursework and evaluations.
+
+[17th November] - Sprint 2 Standup 3 Notes by Karim
+
+1. What did you work on since the last stand up?
+   The group has finished the add-review and search features.
+   I finished merging the add-product feature into the copy branch and also upgraded the feature so that each user has and individual unique cart that does not disappear when logging out. Guest-user has also the same privileges.
+
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   We aim to complete the demos and the documents required for Sprint 2 while at the same time, polishing the current finished work according to the grading rubric.
+
+3. When do you think you'll be done?
+   We should be finishing before midnight so that we make it in time for the Sprint 2 deadline.
+
+4. Do you have any blockers?
+   Same as the last standup, some minor time management issues since this week was quite heavy on coursework and evaluations.
+
+[13th November] - Sprint 2 Standup 1 Notes by Nargis
+
+1. What did you work on since the last stand up?
+   We all individually went through the sprint handout and familiarized ourselves with the components and requirements. Each of us also reviewed our project backlog and came up with the best features we want to go ahead in sprint 2.
+   team capacity: 5
+   participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+2. What do you commit to next?
+   We agreed on the features that we are going to implement and we splitted them between all the team members.
+   Zuhaib and I are going to both work on search and filter.
+   Helena is going to work on adding the review section
+   Karim is going to complete the issues with the add to cart feature that needed to be done from the previous sprint.
+   Ajwad is going to work on SR2
+
+3. When do you think you'll be done?
+   Implementation of the features should be done by Saturday so we have enough time to demo and record it as well and also,
+   the parts such as Sprint2.md, and updates for system design document should be done by end of the day of 15th so for our next stand up we have those done and we can start our implementation for the features and the remaining handout requirements.
+   So far our main focus until our next stand up would be completing the Sprint2, Standups and system design document.
+4. Do you have any blockers?
+   There were no blockers in the first standup and everyone should be able to get things done.
+
+[16th November] - Sprint 2 Standup 2 Notes by Nargis
+
+1. What did you work on since the last stand up?
+   I started working on add categories got to some errors but will fix them by the end of the day.
+   Helena started working on add review feature and She just needs to add the product ID for products - needs help from Zuhaib to get this done.
+   Karim is still working on the issues with add to cart feature.
+   Ajwad is going to work on SR2 and updating the trello.
+   Zuhaib is nearly done with search tool bar will update the PB.md and Sprint2.md
+
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Ajwad, Karim 2. What do you commit to next?
+I will fix the categories errors and Helena will complete the review section for our products with Zuhaib's help.
+Karim will complete and push add-to-cart feature.
+Zuhaib will complete the search an filter feature for our products.
+
+3. When do you think you'll be done?
+   We will try to get the features working by the evening on Sunday 17th so we have enough time for demo and if any errors were ocurring we can get the fixed. Documentations should be completed by Saturday night 16th.
+4. Do you have any blockers?
+   We require the product_id for both reviews and categories so we first need to resolve errors for that and then move forward.
+
+[17th November] - Sprint 2 Standup 3 Notes by Nargis
+
+1. What did you work on since the last stand up?
+   I worked on System Design.
+   Helena added the review feature which works perfectly.
+   Karim completed the add to cart feature.
+   Ajwad worked on burndown chart and updating the trello.
+   Zuhaib is also done with search tool bar.
+   We recorded our demo.
+
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Ajwad, Karim 2. What do you commit to next?
+We need to complete updating Trello, System Design, and Burndown chart - making the final touch ups.
+
+3. When do you think you'll be done?
+   We should complete by November 17th midnight.
+   Do you have any blockers?
+4. There are no blockers to do the final touch ups.
+
+[13th November] - Sprint 2 Standup 1 Notes by Ajwad
+
+1. What did you work on since the last stand up?
+   I went through the sprint 2 handout and decided what I wanna do next.
+
+team capacity: 5
+participants: Zuhaib, Karim, Helena, Nargis, Ajwad
+
+2. What do you commit to next?
+   I am going to work on sr2 and sprint documents .
+
+3. When do you think you'll be done?
+   Implementation of the features should be done by Saturday so we have enough time to demo and record it as well and also,
+   The parts such as Sprint2.md, and updates for system design documents should be done by end of the day of 15th so for our next stand up we have those done and we can start our implementation for the features and rest of the steps of the handout.
+   So far our main focus until our next stand up would be completing the Sprint2,Standups and system design document steps as well as starting to implement our assigned features.
+   tasks have been distributed among all team members so each individual can contribute and get the work done earlier.
+
+4. Do you have any blockers?
+   So far no blockers in the first standup and everyone should be able to get things done by our next stand up with no issue.
+
+[16th November] - Sprint 2 Standup 2 Notes by Ajwad
+
+1. What did you work on since the last stand up?
+
+I started working on Trello and sprint 2 documentations and am Halfway done.
+team capacity: 5
+participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+
+I am gonna complete the remaining documents that are left.
+
+3. When do you think you'll be done?
+   I will be done by Friday night or Saturday night.
+
+4. Do you have any blockers?
+   I personally did not face any blockers except a bit of difficulty understanding formatting for certain documentations.
+
+[17th November] - Sprint 2 Standup 3 Notes by Ajwad
+
+1. What did you work on since the last stand up?
+   I have done Sprint2.md and SR2
+   I also updated the Trello along with burndown and schedule.
+   team capacity: 5
+   participants: Zuhaib, Helena, Nargis, Karim, Ajwad
+
+2. What do you commit to next?
+   Just finish up the burndown and schedule.
+
+3. When do you think you'll be done?
+   everything should be done before the due at 12
+
+4. Do you have any blockers?
+   It was hard figuring out the format for burndown or schedule.

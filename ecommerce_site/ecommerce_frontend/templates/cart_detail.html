@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Your Shopping Cart</h1>
+
+<style>
+  .cart-item-image {
+    max-width: 150px; 
+    max-height: 150px; 
+    object-fit: cover; 
+    
+  }
+</style>
+
+{% if cart_items %}
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+    <th>Actions</th>
+  </tr>
+ 
+  {% for item in cart_items %}
+  <tr>
+    <td>{{ item.product.name }}
+      {% if item.product.image %}
+      <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-image">
+      {% else %}
+      <h3>No image available</h3>
+      {% endif %}
+    </td>
+   
+    <td>
+      <form action="{% url 'update_cart_item' item.id %}" method="post">
+        {% csrf_token %}
+        <input type="number" name="quantity" value="{{ item.quantity }}" min="1">
+        <button type="submit"class="btn btn-primary">Update</button>
+      </form>
+    </td>
+    <td>${{ item.get_subtotal }}</td>
+    <td>
+      <a href="{% url 'remove_cart_item' item.id %}"class="btn btn-primary">Remove</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3>Total: ${{ total }}</h3>
+
+{% else %}
+<h3>Your cart is empty.</h3>
+
+{% endif %}
+
+{% endblock %}
